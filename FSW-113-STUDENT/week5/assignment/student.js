@@ -8,44 +8,46 @@ class Student {
     constructor(args) {
         this.studentName = arguments[0],
         this.className = arguments[1], 
-        this.studentScores = arguments[2],
-        this.possibleScores = arguments[3]
+        this.aryStudentScores = arguments[2],
+        this.aryPossibleScores = arguments[3]
     }
 
     letterGrade() {
-    // calculates the student's letter grade
-    let letterGrade = this.studentScore() / this.possibleScore()
-    switch(letterGrade) {
-        case (score < .6): 
-            grade = 'F'; break;
-        case (score < .7): 
-            grade = 'D'; break;
-        case (score < .8): 
-            grade = 'C'; break;
-        case (score < .9): 
-            grade = 'B'; break;
-        default: 
-            grade = 'A'; break;       
+        // calculates the student's letter grade
+        let score = this.studentScore() / this.possibleScore()
+
+        switch(true) {
+            case (score < .6): 
+                return 'F'; break;
+            case (score < .7): 
+                return 'D'; break;
+            case (score < .8): 
+                return 'C'; break;
+            case (score < .9): 
+                return 'B'; break;
+            default: 
+                return 'A'; break;       
+        }
     }
-}
 
     studentScore() {
         // adds up all student scores
-
-        let studentScore = this.studentScores.reduce((currentTotal, item) => {
-            return item + currentTotal
-        },
-        0
-    )
+        let studentScore = this.aryStudentScores.reduce(
+            (currentTotal, item) => {
+                return item + currentTotal
+            },
+            0
+        )
         return studentScore
-}
+    }
 
     possibleScore() {
         // adds up all possible scores
-        let possibleScore = this.possibleScores.reduce((currentTotal, item) => {
-            return item + currentTotal
-        },
-        0
+        let possibleScore = this.aryPossibleScores.reduce(
+            (currentTotal, item) => {
+                return item + currentTotal
+            },
+            0
         )
         return possibleScore
     }
