@@ -4,8 +4,7 @@
 export default function getDaylight(sunrise, sunset, time) {
     let color = "black"
 
-    if (time > sunrise && time < sunset)
-    color = "blue"
+    if (time > sunrise && time < sunset) color = "blue"
 
     return color
 }
