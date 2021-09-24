@@ -3,3 +3,6 @@
     to the example as possible. You will need to use display:grid to make the 
     bug reports display in three columns (see week 4).
 */
+.reportWrapper {
+    border-style: solid;
+}
