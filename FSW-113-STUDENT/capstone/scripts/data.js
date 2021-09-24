@@ -1,20 +1,18 @@
 const systemSelect = document.getElementById('system')
 const subSystemSelect = document.getElementById('subSystem')
 
-window.addEventListener('load', () => {
+// window.addEventListener('load', () => {
     getSystems(0, systemSelect);
-})
-
+// })
 function getSystems(parentID, domElement) {
-    fetch('/fsw113_2/FSW-113-STUDENT/capstone/data.json')
+    fetch('../data.json')
     .then(res => res.json())
     .then(res => {
         let responseArray = res.systems;
 
         let newArray = responseArray.filter((e) => {
-            return e.parentID === parentID;
+            return e.parentID == parentID;
         })
-
         populateDD(newArray, domElement)
     })
     .catch(err => console.log(err))
