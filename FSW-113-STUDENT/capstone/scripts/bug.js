@@ -57,7 +57,7 @@ function reportBug(e) {
 }
 window.reportBug = reportBug
 
-document.body.style.backgroundImage = "url('/fsw113_2/FSW-113-STUDENT/capstone/images/wallpaper.jpg')"
+document.body.style.backgroundImage = "url('../images/wallpaper.jpg')"
 document.getElementById('topbar').style.color = "white";
 document.getElementById('topbar').style.backgroundColor = "red"
 document.getElementById('topbar').style.height = "25px"
